@@ -1,3 +1,5 @@
+.. _gpgLabs:
+
 gpgLabs
 =======
 
