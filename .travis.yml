@@ -5,8 +5,11 @@ python:
 sudo: false
 
 env:
-    - TEST_DIR="tests"
+  global:
     - PYPI_PY=3.6
+
+  matrix:
+    - TEST_DIR="tests"
 
 install:
   - pip install --upgrade pip;
