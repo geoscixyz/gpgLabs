@@ -3,6 +3,10 @@ gpgLabs
 
 Tutorials and examples for applied geophysics!
 
+.. image:: https://img.shields.io/pypi/v/gpgLabs.svg
+    :target: https://pypi.python.org/pypi/gpgLabs
+    :alt: Latest PyPI version
+
 .. image:: https://travis-ci.org/ubcgif/gpgLabs.svg?branch=master
     :alt: Build Status
     :target: https://travis-ci.org/ubcgif/gpgLabs
@@ -13,6 +17,7 @@ Tutorials and examples for applied geophysics!
 
 These notebooks supplement material in the `gpg <http://gpg.geosci.xyz>`_
 and are used in the applied geophysics course `EOSC 350 <http://eosc350.geosci.xyz>`_ at UBC.
+
 
 Notes for Contributors
 ----------------------
