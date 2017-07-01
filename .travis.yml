@@ -25,7 +25,7 @@ script:
 # deploy to pypi
 after_success:
   - if [ $TRAVIS_PYTHON_VERSION == $PYPI_PY ]; then
-      openssl aes-256-cbc -K $encrypted_bc303f70394a_key -iv $encrypted_bc303f70394a_iv -in credentials.tar.gz.enc -out credentials.tar.gz -d
+      openssl aes-256-cbc -K $encrypted_bc303f70394a_key -iv $encrypted_bc303f70394a_iv -in credentials.tar.gz.enc -out credentials.tar.gz -d ;
       tar -xzf credentials.tar.gz ;
       mv credentials/.pypirc ~/.pypirc ;
       python setup.py bdist_wheel ;
