@@ -2,6 +2,7 @@ import numpy as np
 from scipy.constants import mu_0, epsilon_0
 import matplotlib.pyplot as plt
 from PIL import Image
+from SimPEG.Utils import download
 import warnings
 warnings.filterwarnings('ignore')
 from ipywidgets import interact, interactive, IntSlider, widget, FloatText, FloatSlider, fixed
