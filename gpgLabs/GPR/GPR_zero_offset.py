@@ -14,15 +14,15 @@ from ipywidgets import interact, interactive, IntSlider, widget, FloatText, Floa
 def PrimaryWidget():
 
     i = interact(GPRWidget_zero_offset,
-            logsig = IntSlider( min=-5, max=-3, value=-4, step=1 ),
-            epsr = IntSlider( min=1, max=16, value=1, step=3 ),
-            fc = FloatSlider( min=2e7, max=1e8, value=4e7, step=2e7 ),
-            x1 = IntSlider( min=-30, max=30, value=-10, step=1 ),
-            x2 = IntSlider( min=-30, max=30, value=10, step=1 ),
-            d1 = IntSlider( min=5, max=40, value=10, step=1 ),
-            d2 = IntSlider( min=5, max=40, value=10, step=1 ),
-            R1 = FloatSlider( min=-0.5, max=10, value=1, step=0.5 ),
-            R2 = FloatSlider( min=-0.5, max=10, value=1, step=0.5 )
+            logsig = IntSlider( min=-5, max=-3, value=-4, step=1, continuous_update=False, description = "$log(\sigma)$ [S/m]"),
+            epsr = IntSlider( min=1, max=16, value=1, step=3, continuous_update=False, description = "$\epsilon_r$" ),
+            fc = IntSlider( min=20, max=100, value=40, step=20, continuous_update=False, description = "$f_c$ [MHz]" ),
+            x1 = IntSlider( min=-30, max=30, value=-10, step=1, continuous_update=False, description = "$x_1$ [m]" ),
+            d1 = IntSlider( min=5, max=40, value=10, step=1, continuous_update=False, description = "$d_1$ [m]" ),
+            R1 = FloatSlider( min=-0.5, max=10, value=1, step=0.5, continuous_update=False, description = "$R_1$ [m]" ),
+            x2 = IntSlider( min=-30, max=30, value=10, step=1, continuous_update=False, description = "$x_2$ [m]" ),
+            d2 = IntSlider( min=5, max=40, value=10, step=1, continuous_update=False, description = "$d_2$ [m]" ),
+            R2 = FloatSlider( min=-0.5, max=10, value=1, step=0.5, continuous_update=False, description = "$R_2$ [m]" ))
 
     return i
 
@@ -34,7 +34,10 @@ def PrimaryWidget():
 ########################################
 
 
-def GPRWidget_zero_offset(epsr,logsig,fc,x1,d1,x2,d2,R1,R2):
+def GPRWidget_zero_offset(epsr,logsig,fc,x1,d1,R1,x2,d2,R2):
+
+
+	fc = 1e6*fc 	# MHz to Hz
 
 	# Compute Time and Offset Range
 	v = fcnComputeVelocity(epsr,logsig,fc)
@@ -56,6 +59,9 @@ def GPRWidget_zero_offset(epsr,logsig,fc,x1,d1,x2,d2,R1,R2):
 
 	# Create Radargram Data
 	dx = (xmax-xmin)/(nx-1)
+	xp = [x1,x2]
+	dp = [d1,d2]
+	R = [R1,R2]
 
 	for ii in range(0,2):
 	    
@@ -129,28 +135,28 @@ def fcnComputePointTravelTime(xp,dp,R,epsr,logsig,fc,xrx):
 
 def fcnComputeVelocity(epsr,logsig,fc):
 	"""Compute propagation velocity"""
-    
-    eps = epsr*8.854e-12
-    sig = 10**logsig
-    mu = 4*np.pi*1e-7
-    w = 2*np.pi*fc
-    
-    v = np.sqrt(2/(mu*eps))/np.sqrt(np.sqrt(1 + (sig/(w*eps))**2) + 1)
-    
-    return v
+
+	eps = epsr*8.854e-12
+	sig = 10**logsig
+	mu = 4*np.pi*1e-7
+	w = 2*np.pi*fc
+
+	v = np.sqrt(2/(mu*eps))/np.sqrt(np.sqrt(1 + (sig/(w*eps))**2) + 1)
+
+	return v
 
 
 def fcnComputeAlpha(epsr,logsig,fc):
 	"""Compute attenuation factor"""
-    
-    eps = epsr*8.854e-12
-    sig = 10**logsig
-    mu = 4*np.pi*1e-7
-    w = 2*np.pi*fc
-    
-    a = w*np.sqrt(mu*eps/2)*np.sqrt(np.sqrt(1 + (sig/(w*eps))**2) - 1)
-    
-    return a
+
+	eps = epsr*8.854e-12
+	sig = 10**logsig
+	mu = 4*np.pi*1e-7
+	w = 2*np.pi*fc
+
+	a = w*np.sqrt(mu*eps/2)*np.sqrt(np.sqrt(1 + (sig/(w*eps))**2) - 1)
+
+	return a
 
 
 
