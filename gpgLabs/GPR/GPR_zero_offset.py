@@ -13,7 +13,7 @@ from ipywidgets import interact, interactive, IntSlider, widget, FloatText, Floa
 
 def WidgetWaveRegime():
 
-    i = interact(GPRWidget_zero_offset,
+    i = interact(GPRWidgetWaveRegime,
             sig = FloatSlider( min=0.5, max=5, value=3, step=0.25, continuous_update=False, description = "$\sigma$ [mS/m]" ),
             epsr = IntSlider( min=1, max=25, value=4, step=1, continuous_update=False, description = "$\epsilon_r$" ),
             fc = IntSlider( min=50, max=1000, value=250, step=25, continuous_update=False, description = "$f_c$ [MHz]" ),
@@ -27,29 +27,15 @@ def WidgetWaveRegime():
     return i
 
 
-def WidgetQuasistatic():
-
-    i = interact(GPRWidget_zero_offset,
-            sig = FloatSlider( min=10, max=100, value=20, step=5, continuous_update=False, description = "$\sigma$ [mS/m]" ),
-            epsr = IntSlider( min=1, max=25, value=9, step=1, continuous_update=False, description = "$\epsilon_r$" ),
-            fc = IntSlider( min=10, max=100, value=20, step=5, continuous_update=False, description = "$f_c$ [MHz]" ),
-            x1 = FloatSlider( min=-10, max=10, value=-4, step=0.25, continuous_update=False, description = "$x_1$ [m]" ),
-            d1 = FloatSlider( min=1, max=8, value=2, step=0.25, continuous_update=False, description = "$d_1$ [m]" ),
-            R1 = FloatSlider( min=0.1, max=2, value=0.3, step=0.1, continuous_update=False, description = "$R_1$ [m]" ),
-            x2 = FloatSlider( min=-10, max=10, value=4, step=0.25, continuous_update=False, description = "$x_2$ [m]" ),
-            d2 = FloatSlider( min=1, max=8, value=4, step=0.25, continuous_update=False, description = "$d_2$ [m]" ),
-            R2 = FloatSlider( min=0.1, max=2, value=0.3, step=0.1, continuous_update=False, description = "$R_2$ [m]" ))
-
-    return i
 
 ########################################
 #           FUNCTIONS
 ########################################
 
 
-def GPRWidget_zero_offset(sig,epsr,fc,x1,d1,R1,x2,d2,R2):
+def GPRWidgetWaveRegime(sig,epsr,fc,x1,d1,R1,x2,d2,R2):
 
-	sig = 0.001*sig
+	sig = 0.001*sig  # mS/m to S/m
 	fc = 1e6*fc 	# MHz to Hz
 
 	# Compute Time and Offset Range
