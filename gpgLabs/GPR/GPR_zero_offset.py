@@ -14,15 +14,15 @@ from ipywidgets import interact, interactive, IntSlider, widget, FloatText, Floa
 def PrimaryWidget():
 
     i = interact(GPRWidget_zero_offset,
-            logsig = IntSlider( min=-5, max=-3, value=-4, step=1, continuous_update=False, description = "$log(\sigma)$ [S/m]"),
-            epsr = IntSlider( min=1, max=16, value=1, step=3, continuous_update=False, description = "$\epsilon_r$" ),
-            fc = IntSlider( min=20, max=100, value=40, step=20, continuous_update=False, description = "$f_c$ [MHz]" ),
-            x1 = IntSlider( min=-30, max=30, value=-10, step=1, continuous_update=False, description = "$x_1$ [m]" ),
-            d1 = IntSlider( min=5, max=40, value=10, step=1, continuous_update=False, description = "$d_1$ [m]" ),
-            R1 = FloatSlider( min=-0.5, max=10, value=1, step=0.5, continuous_update=False, description = "$R_1$ [m]" ),
-            x2 = IntSlider( min=-30, max=30, value=10, step=1, continuous_update=False, description = "$x_2$ [m]" ),
-            d2 = IntSlider( min=5, max=40, value=10, step=1, continuous_update=False, description = "$d_2$ [m]" ),
-            R2 = FloatSlider( min=-0.5, max=10, value=1, step=0.5, continuous_update=False, description = "$R_2$ [m]" ))
+            sig = FloatSlider( min=1, max=10, value=5, step=1, continuous_update=False, description = "$\sigma$ [mS/m]" ),
+            epsr = IntSlider( min=1, max=25, value=9, step=1, continuous_update=False, description = "$\epsilon_r$" ),
+            fc = IntSlider( min=50, max=400, value=100, step=25, continuous_update=False, description = "$f_c$ [MHz]" ),
+            x1 = FloatSlider( min=-10, max=10, value=-4, step=0.25, continuous_update=False, description = "$x_1$ [m]" ),
+            d1 = FloatSlider( min=1, max=8, value=2, step=0.25, continuous_update=False, description = "$d_1$ [m]" ),
+            R1 = FloatSlider( min=0.1, max=2, value=0.3, step=0.1, continuous_update=False, description = "$R_1$ [m]" ),
+            x2 = FloatSlider( min=-10, max=10, value=4, step=0.25, continuous_update=False, description = "$x_2$ [m]" ),
+            d2 = FloatSlider( min=1, max=8, value=4, step=0.25, continuous_update=False, description = "$d_2$ [m]" ),
+            R2 = FloatSlider( min=0.1, max=2, value=0.3, step=0.1, continuous_update=False, description = "$R_2$ [m]" ))
 
     return i
 
@@ -34,16 +34,16 @@ def PrimaryWidget():
 ########################################
 
 
-def GPRWidget_zero_offset(epsr,logsig,fc,x1,d1,R1,x2,d2,R2):
+def GPRWidget_zero_offset(sig,epsr,fc,x1,d1,R1,x2,d2,R2):
 
-
+	sig = 0.001*sig
 	fc = 1e6*fc 	# MHz to Hz
 
 	# Compute Time and Offset Range
-	v = fcnComputeVelocity(epsr,logsig,fc)
-	a = fcnComputeAlpha(epsr,logsig,fc)
+	v = fcnComputeVelocity(epsr,sig,fc)
+	a = fcnComputeAlpha(epsr,sig,fc)
 
-	xmin,xmax,nx = -30, 30, 31
+	xmin,xmax,nx = -10, 10, 21
 	xrx = np.reshape(np.linspace(xmin,xmax,nx),(1,nx))
 	
 	tmax = (4/a)/v
@@ -65,13 +65,13 @@ def GPRWidget_zero_offset(epsr,logsig,fc,x1,d1,R1,x2,d2,R2):
 
 	for ii in range(0,2):
 	    
-	    tii = fcnComputePointTravelTime(xp[ii],dp[ii],R[ii],epsr,logsig,fc,xrx)
+	    tii = fcnComputePointTravelTime(xp[ii],dp[ii],R[ii],epsr,sig,fc,xrx)
 	    Aii = (0.6*dx*(Attn*fcnGetRicker(fc,T-np.kron(tii,q)) + 0.01*np.random.normal(0,1,(nt,nx)))/Attn)
 	    XRX = XRX + Aii
 
-	# Plotting
+	# PLOTTING
 	FS = 18
-	dlim = 50
+	dlim = 10
 
 	fig1 = plt.figure(figsize=(14,6))
 
@@ -79,7 +79,7 @@ def GPRWidget_zero_offset(epsr,logsig,fc,x1,d1,R1,x2,d2,R2):
 	ptArray = np.array([[xmin,0],[xmax,0.],[xmax,dlim],[xmin,dlim]])
 	poly1 = plt.Polygon(ptArray,closed=True,facecolor=((0.7,0.7,0.5)),edgecolor=((0.2,0.2,0.2)),lw=2.5)
 	Ax1.add_patch(poly1)
-	ptArray = np.array([[xmin,0],[xmax,0.],[xmax,-0.2*dlim],[xmin,-0.2*dlim]])
+	ptArray = np.array([[xmin,0],[xmax,0.],[xmax,-0.25*dlim],[xmin,-0.25*dlim]])
 	poly2 = plt.Polygon(ptArray,closed=True,facecolor=((0.8,1,1)),edgecolor=((0.2,0.2,0.2)),lw=2.5)
 	Ax1.add_patch(poly2)
 
@@ -118,12 +118,12 @@ def fcnGetRicker(fc,t):
     
     return A
 
-def fcnComputePointTravelTime(xp,dp,R,epsr,logsig,fc,xrx):
+def fcnComputePointTravelTime(xp,dp,R,epsr,sig,fc,xrx):
     """Compute travel times for all zero-offset positions"""
     
     # Compute Velocity
     eps = epsr*8.854e-12
-    sig = 10**logsig
+    #sig = 10**logsig
     mu = 4*np.pi*1e-7
     
     v = np.sqrt(2/(mu*eps))/np.sqrt(np.sqrt(1 + (sig/(2*np.pi*fc*eps))**2) + 1)
@@ -133,11 +133,11 @@ def fcnComputePointTravelTime(xp,dp,R,epsr,logsig,fc,xrx):
     
     return t
 
-def fcnComputeVelocity(epsr,logsig,fc):
+def fcnComputeVelocity(epsr,sig,fc):
 	"""Compute propagation velocity"""
 
 	eps = epsr*8.854e-12
-	sig = 10**logsig
+	#sig = 10**logsig
 	mu = 4*np.pi*1e-7
 	w = 2*np.pi*fc
 
@@ -146,11 +146,11 @@ def fcnComputeVelocity(epsr,logsig,fc):
 	return v
 
 
-def fcnComputeAlpha(epsr,logsig,fc):
+def fcnComputeAlpha(epsr,sig,fc):
 	"""Compute attenuation factor"""
 
 	eps = epsr*8.854e-12
-	sig = 10**logsig
+	#sig = 10**logsig
 	mu = 4*np.pi*1e-7
 	w = 2*np.pi*fc
 
@@ -158,11 +158,4 @@ def fcnComputeAlpha(epsr,logsig,fc):
 
 	return a
 
-
-
-
-
-########################################
-#           PLOTS
-########################################
 
