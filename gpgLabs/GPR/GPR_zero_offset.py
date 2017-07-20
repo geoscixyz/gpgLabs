@@ -19,10 +19,10 @@ def WidgetWaveRegime():
             fc = IntSlider( min=50, max=1000, value=250, step=25, continuous_update=False, description = "$f_c$ [MHz]" ),
             x1 = FloatSlider( min=-10, max=10, value=-4, step=0.25, continuous_update=False, description = "$x_1$ [m]" ),
             d1 = FloatSlider( min=1, max=15, value=2, step=0.25, continuous_update=False, description = "$d_1$ [m]" ),
-            R1 = FloatSlider( min=0.1, max=2, value=0.3, step=0.1, continuous_update=False, description = "$R_1$ [m]" ),
+            R1 = FloatSlider( min=0.1, max=2, value=0.1, step=0.1, continuous_update=False, description = "$R_1$ [m]" ),
             x2 = FloatSlider( min=-10, max=10, value=4, step=0.25, continuous_update=False, description = "$x_2$ [m]" ),
             d2 = FloatSlider( min=1, max=15, value=6, step=0.25, continuous_update=False, description = "$d_2$ [m]" ),
-            R2 = FloatSlider( min=0.1, max=2, value=0.3, step=0.1, continuous_update=False, description = "$R_2$ [m]" ))
+            R2 = FloatSlider( min=0.1, max=2, value=0.1, step=0.1, continuous_update=False, description = "$R_2$ [m]" ))
 
     return i
 
