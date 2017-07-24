@@ -31,19 +31,17 @@ with open('README.rst') as f:
 
 setup(
     name = 'gpgLabs',
-    version = '0.0.1',
+    version = '0.0.5',
     packages = find_packages(),
     install_requires = [
-        'future',
         'numpy>=1.7',
         'scipy>=0.13',
         'matplotlib',
-        'pandas',
         'ipywidgets',
         'properties[math]',
         'SimPEG>=0.4.1',
-        'jupyter',
-        'JSAnimation'
+        'discretize',
+        'em_examples'
     ],
     author = 'GeoSci Developers',
     author_email = 'lheagy@eos.ubc.ca',
