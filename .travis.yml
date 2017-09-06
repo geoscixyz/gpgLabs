@@ -2,23 +2,36 @@ language: python
 python:
   - 2.7
   - 3.6
+
 sudo: false
 
 env:
+  global:
+    - PYPI_PY=3.6
+
+  matrix:
     - TEST_DIR="tests"
 
-# Setup anaconda
-before_install:
-  - pip install --upgrade pip;
-  - pip install -r requirements.txt
-
 install:
-  # - conda install --yes pip python=$TRAVIS_PYTHON_VERSION numpy scipy matplotlib ipywidgets
-  - export PATH=$PWD/simpeg:$PATH
+  - pip install --upgrade pip;
+  - pip install twine;
+  - cd gpgLabs; python setup.py install; cd ..
 
 # Run test
 script:
   - travis_wait 20 nosetests $TEST_DIR -v -s
+
+# deploy to pypi
+after_success:
+  - if [ "$TRAVIS_TAG" ]; then
+      if [ $TRAVIS_PYTHON_VERSION == $PYPI_PY ]; then
+        openssl aes-256-cbc -K $encrypted_bc303f70394a_key -iv $encrypted_bc303f70394a_iv -in credentials.tar.gz.enc -out credentials.tar.gz -d ;
+        tar -xzf credentials.tar.gz ;
+        mv credentials/.pypirc ~/.pypirc ;
+        python setup.py sdist bdist_wheel ;
+        travis_wait 20 twine upload -r pypi --skip-existing dist/* ;
+      fi
+    fi
 
 notifications:
   slack: ubcgif:1Z2lR3XYRSM3GHflG71ZHEN6
