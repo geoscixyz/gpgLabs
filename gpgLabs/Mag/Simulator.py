@@ -1,7 +1,7 @@
 from . import Mag
 from . import MagUtils
 import SimPEG.PF as PF
-from SimPEG.Utils import mkvc
+import SimPEG.Utils as Utils
 from scipy.constants import mu_0
 from matplotlib import pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -215,10 +215,9 @@ def plotMagSurvey2D(survey, a, b, npts, data=None, pred=None,
         data = survey.dobs
 
     # Use SimPEG.PF ploting function
-    PF.Magnetics.plot_obs_2D(rxLoc, d=data, fig=fig,  ax=ax,
-                             vmin=vmin, vmax=vmax,
-                             marker=False, cmap='RdBu_r')
-
+    Utils.PlotUtils.plot2Ddata(rxLoc, data=data, ax=ax,
+                             clim=[vmin, vmax],
+                             dataloc=False)
     ax.plot(x, y, 'w.', ms=10)
     ax.text(x[0], y[0], 'A', fontsize=16, color='w', ha='left')
     ax.text(x[-1], y[-1], 'B', fontsize=16,
@@ -229,14 +228,12 @@ def plotMagSurvey2D(survey, a, b, npts, data=None, pred=None,
         ax2 = plt.subplot(1, 2, 2)
 
         if pred.min() != pred.max():
-            PF.Magnetics.plot_obs_2D(rxLoc, d=pred, fig=fig,  ax=ax2,
-                                     vmin=vmin, vmax=vmax,
-                                     marker=False, cmap='RdBu_r')
+            Utils.PlotUtils.plot2Ddata(rxLoc, data=pred, ax=ax2,
+                                     clim=[vmin, vmax], dataloc=False)
 
         else:
-            PF.Magnetics.plot_obs_2D(rxLoc, d=pred, fig=fig,  ax=ax2,
-                                     vmin=pred.min(), vmax=pred.max(),
-                                     marker=False, cmap='RdBu_r')
+            Utils.PlotUtils.plot2Ddata(rxLoc, data=pred, ax=ax2,
+                                     clim=[pred.min(), pred.max()], dataloc=False)
         ax2.plot(x, y, 'w.', ms=10)
         ax2.text(x[0], y[0], 'A', fontsize=16, color='w',
                 ha='left')
