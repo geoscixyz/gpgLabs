@@ -7,7 +7,7 @@ notebooks/dcip/DC_SurveyDataInversion.ipynb
 # # Electromagnetics
 notebooks/em/EM_Pipeline.ipynb
 notebooks/em/EM_EM31.ipynb
-notebooks/em/EM_ThreeLoopModel.ipynb
+notebooks/em/FDEM_ThreeLoopModel.ipynb
 notebooks/em/InductionRLcircuit_Harmonic.ipynb
 
 # # Ground Penetrating Radar
