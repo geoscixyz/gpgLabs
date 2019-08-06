@@ -82,8 +82,6 @@ If you run into problems or bugs, please let us know by [creating an issue](http
 
 ## For Contributors
 
-## For Contributors
-
 We are glad you are interested in contributing! 
 
 This repo tracks [geosci-labs](https://github.com/geoscixyz/geosci-labs). To contribute code, ideas or bug-fixes, please head over to the [geosci-labs](https://github.com/geoscixyz/geosci-labs) repository. 
