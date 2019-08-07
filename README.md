@@ -53,7 +53,7 @@ To setup your software environment, we recommend you use the provided conda envi
 
 ```
 conda env create -f environment.yml
-conda activate gpgLabs-environment
+conda activate geosci-labs
 ```
 
 alternatively, you can install dependencies through pypi
@@ -78,23 +78,14 @@ For more information on running Jupyter notebooks, see the [Jupyter Documentatio
 
 ## Issues
 
-If you run into problems or bugs, please let us know by [creating an issue](https://github.com/geoscixyz/em-apps/issues/new) in this repository.
+If you run into problems or bugs, please let us know by [creating an issue](https://github.com/geoscixyz/gpgLabs/issues/new) in this repository.
 
 ## For Contributors
 
-### Notebook Structure
+We are glad you are interested in contributing! 
 
-Each notebook has the following structure
+This repo tracks [geosci-labs](https://github.com/geoscixyz/geosci-labs). To contribute code, ideas or bug-fixes, please head over to the [geosci-labs](https://github.com/geoscixyz/geosci-labs) repository. 
 
-- **Purpose** : Motivation and key concepts addressed by the notebook
-- **Setup** : Overview of the relevant parameters in the problem
-- **Questions** : Guiding questions related to the purpose
-- **App** : interactive visualizations
-- **Explore** : further questions that can be explored with the app
 
-### Setting up your environment
-
-- to develop code for these notebooks, please see https://github.com/geoscixyz/gpgLabs
-- add the notebook name and path to the [index](index.ipynb)
 
 

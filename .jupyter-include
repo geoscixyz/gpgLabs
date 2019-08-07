@@ -1,0 +1,33 @@
+# # index notebook
+# notebooks/index.ipynb
+
+# # DC resistivity and induced polarization
+notebooks/dcip/DC_SurveyDataInversion.ipynb
+
+# # Electromagnetics
+notebooks/em/EM_Pipeline.ipynb
+notebooks/em/EM_EM31.ipynb
+notebooks/em/FDEM_ThreeLoopModel.ipynb
+notebooks/em/InductionRLcircuit_Harmonic.ipynb
+
+# # Ground Penetrating Radar
+notebooks/gpr/GPR_Lab6_FitData.ipynb
+notebooks/gpr/GPR_TBL4_DOI_Resolution.ipynb
+notebooks/gpr/GPR_Attenuation.ipynb
+
+# # Inversion
+# notebooks/inversion/LinearInversion.ipynb
+
+# # Magnetics
+notebooks/mag/MagneticPrismApplet.ipynb
+notebooks/mag/MagneticDipoleApplet.ipynb
+notebooks/mag/Mag_FitProfile.ipynb
+notebooks/mag/Mag_Induced2D.ipynb
+notebooks/mag/Mag_Dipole.ipynb
+
+# # Seismic
+notebooks/seismic/SeismicApplet.ipynb
+notebooks/seismic/Seis_NMO.ipynb
+notebooks/seismic/Seis_VerticalResolution.ipynb
+notebooks/seismic/Seis_Refraction.ipynb
+notebooks/seismic/Seis_Reflection.ipynb

@@ -1,0 +1,12 @@
+# information about the source library
+source:
+  github:
+    user: geoscixyz
+    repo: geosci-labs
+    branch: master  # optional
+    directory: notebooks  # optional - including it will speed up the search for the desired notebooks
+
+# setup options for the library
+setup:
+  environment: environment.yml  # include the environment.yml from the source
+  requirements: requirements.txt  # include the requirements.txt file
