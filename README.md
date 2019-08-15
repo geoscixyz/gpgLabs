@@ -11,7 +11,7 @@
 This is a repo of interactive examples for http://gpg.geosci.xyz.
 
 The notebooks are available on
-- [Binder](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=Notebooks%2Findex.ipynb)
+- [Binder](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=notebooks%2Findex.ipynb)
 
 <!-- <img src="https://em.geosci.xyz/_images/DC_LayeredEarth_notebook.png" width=60% align="center">
  -->
