@@ -2,7 +2,7 @@
 
 # gpgLabs
 
-[![binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=Notebooks%2Findex.ipynb)
+[![binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=notebooks%2Findex.ipynb)
 [![travis](https://travis-ci.org/geoscixyz/gpgLabs.svg?branch=master)](https://travis-ci.org/geoscixyz/gpgLabs)
 [![SimPEG](https://img.shields.io/badge/powered%20by-SimPEG-blue.svg)](http://simpeg.xyz)
 
