@@ -9,4 +9,4 @@ ipywidgets
 deepdish
 Pillow
 requests
-geosci-labs
+geoscilabs
