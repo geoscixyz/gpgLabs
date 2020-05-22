@@ -2,11 +2,11 @@ numpy>=1.7
 scipy>=1.0
 matplotlib>2.1
 ipywidgets
-SimPEG>=0.10.4
+SimPEG<0.14
 empymod
 jupyter
 ipywidgets
 deepdish
 Pillow
 requests
-git+https://github.com/geoscixyz/geosci-labs
+geosci-labs

@@ -11,11 +11,11 @@ dependencies:
   - ipywidgets>=0.6.0
   - requests
   - mkl
+  - discretize
+  - SimPEG<0.14
+  - pymatsolver
   - pip
   - pip:
-    - pymatsolver
-    - discretize
     - deepdish
-    - SimPEG
     - empymod
-    - git+https://github.com/geoscixyz/geosci-labs
+    - geosci-labs
