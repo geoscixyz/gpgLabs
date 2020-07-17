@@ -2,7 +2,7 @@ numpy>=1.7
 scipy>=1.0
 matplotlib>2.1
 ipywidgets
-SimPEG<0.14
+SimPEG>=0.14.2
 empymod
 jupyter
 ipywidgets
@@ -10,3 +10,4 @@ deepdish
 Pillow
 requests
 geoscilabs
+cvxopt
