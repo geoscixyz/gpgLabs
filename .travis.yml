@@ -21,12 +21,12 @@ before_install:
 
 # Setup anaconda
 install:
-  - conda env create -f environment.yml
+  - conda env create -f environment-dev.yml
   - source activate geosci-labs
 
 # Run test
 script:
-  - travis_wait 30 nosetests $TEST_DIR -v -s
+  - pytest $TEST_DIR -v -s
 
 notifications:
   slack: ubcgif:1Z2lR3XYRSM3GHflG71ZHEN6
