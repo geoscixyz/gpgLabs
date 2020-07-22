@@ -3,11 +3,11 @@ scipy>=1.0
 matplotlib>2.1
 ipywidgets
 SimPEG>=0.14.2
-empymod
+empymod>=2.0.0
 jupyter
 ipywidgets
 deepdish
 Pillow
 requests
-geoscilabs
+geoscilabs>=0.2.0
 cvxopt

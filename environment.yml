@@ -9,12 +9,13 @@ dependencies:
   - scipy
   - matplotlib
   - Pillow
+  - jupyter
   - ipywidgets>=0.6.0
   - requests
   - SimPEG>=0.14.2
-  - empymod
+  - empymod>=2.0.0
   - cvxopt
   - pip
   - pip:
     - deepdish
-    - geoscilabs
+    - geoscilabs>=0.2.0
