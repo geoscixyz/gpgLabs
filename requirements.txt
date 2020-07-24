@@ -5,7 +5,6 @@ ipywidgets
 SimPEG>=0.14.2
 empymod>=2.0.0
 jupyter
-ipywidgets
 deepdish
 Pillow
 requests
