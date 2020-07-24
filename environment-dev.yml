@@ -15,7 +15,9 @@ dependencies:
   - SimPEG>=0.14.2
   - empymod>=2.0.0
   - cvxopt
+  - pytest
   - pip
   - pip:
     - deepdish
     - geoscilabs>=0.2.0
+    - testipynb

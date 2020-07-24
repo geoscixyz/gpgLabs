@@ -11,13 +11,22 @@ env:
   - TEST_DIR="tests"
 
 # Setup anaconda
+before_install:
+# Install packages
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b -p $HOME/miniconda
+  - export PATH=/home/travis/anaconda/bin:/home/travis/miniconda/bin:$PATH
+  - conda update --yes conda
+
+# Setup anaconda
 install:
-  - pip install --upgrade pip;
-  - pip install -r requirements.txt
+  - conda env create -f environment-dev.yml
+  - source activate geosci-labs
 
 # Run test
 script:
-  - travis_wait 30 nosetests $TEST_DIR -v -s
+  - pytest $TEST_DIR -v -s
 
 notifications:
   slack: ubcgif:1Z2lR3XYRSM3GHflG71ZHEN6
