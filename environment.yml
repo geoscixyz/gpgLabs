@@ -10,6 +10,7 @@ dependencies:
   - matplotlib
   - Pillow
   - jupyter
+  - jupyterhub=1.1.0
   - ipywidgets>=0.6.0
   - requests
   - SimPEG>=0.14.2
