@@ -3,8 +3,8 @@
 # gpgLabs
 
 [![Syzygy](https://img.shields.io/badge/launch-syzygy-important)](https://ubc.syzygy.ca/jupyter/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fgeoscixyz%2FgpgLabs&urlpath=tree%2FgpgLabs%2Fnotebooks%2Findex.ipynb)
-[![binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=notebooks%2Findex.ipynb)
-[![travis](https://travis-ci.org/geoscixyz/gpgLabs.svg?branch=master)](https://travis-ci.org/geoscixyz/gpgLabs)
+[![binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/main?filepath=notebooks%2Findex.ipynb)
+[![travis](https://travis-ci.org/geoscixyz/gpgLabs.svg?branch=main)](https://travis-ci.org/geoscixyz/gpgLabs)
 [![SimPEG](https://img.shields.io/badge/powered%20by-SimPEG-blue.svg)](http://simpeg.xyz)
 
 ## Overview
