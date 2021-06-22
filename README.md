@@ -12,7 +12,7 @@
 This is a repo of interactive examples for http://gpg.geosci.xyz.
 
 The notebooks are available on
-- [Binder](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=notebooks%2Findex.ipynb)
+- [Binder](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/main?filepath=notebooks%2Findex.ipynb)
 
 <!-- <img src="https://em.geosci.xyz/_images/DC_LayeredEarth_notebook.png" width=60% align="center">
  -->
@@ -23,9 +23,9 @@ The notebooks can be run online through [Binder](#Binder), or [downloaded and ru
 
 ### Binder
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=notebooks%2Findex.ipyn)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/geoscixyz/gpgLabs/main?filepath=notebooks%2Findex.ipyn)
 
-1. Launch the binder by clicking on the badge above or going to: https://mybinder.org/v2/gh/geoscixyz/gpgLabs/master?filepath=notebooks%2Findex.ipynb.
+1. Launch the binder by clicking on the badge above or going to: https://mybinder.org/v2/gh/geoscixyz/gpgLabs/main?filepath=notebooks%2Findex.ipynb.
    This can sometimes take a couple minutes, so be patient...
 
 2. Select the notebook of interest from the contents
