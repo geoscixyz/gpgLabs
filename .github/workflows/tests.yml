@@ -32,13 +32,6 @@ jobs:
         python --version
         conda env create -f environment-dev.yml
 
-    - name: Install Our Package
-      shell: bash
-      run: |
-        source activate geosci-labs
-        pip install -e .
-        conda list
-
     - name: Run Tests
       shell: bash
       run: |
