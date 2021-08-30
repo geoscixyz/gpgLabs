@@ -4,20 +4,20 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python>=3.6
-  - numpy
-  - scipy
-  - matplotlib
+  - python=3.8
+  - numpy>=1.21
+  - scipy>=1.7
+  - matplotlib>=3.4
   - Pillow
   - jupyter
   - ipywidgets>=0.6.0
   - requests
-  - SimPEG>=0.14.2
+  - SimPEG>=0.15.0
   - empymod>=2.0.0
   - cvxopt
   - pytest
   - pip
   - pip:
     - deepdish
-    - geoscilabs>=0.2.0
+    - geoscilabs>=0.3.0
     - testipynb
