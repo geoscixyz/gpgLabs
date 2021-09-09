@@ -1,8 +1,8 @@
-numpy>=1.7
-scipy>=1.0
-matplotlib>2.1
+numpy>=1.21
+scipy>=1.7
+matplotlib>=3.4
 ipywidgets
-SimPEG>=0.14.2
+SimPEG>=0.15.0
 empymod>=2.0.0
 jupyter
 deepdish

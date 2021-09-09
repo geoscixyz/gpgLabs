@@ -3,7 +3,7 @@ source:
   github:
     user: geoscixyz
     repo: geosci-labs
-    branch: master  # optional
+    branch: main  # optional
     directory: notebooks  # optional - including it will speed up the search for the desired notebooks
 
 # setup options for the library
