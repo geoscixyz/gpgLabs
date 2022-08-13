@@ -4,20 +4,33 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.8
-  - numpy>=1.21
-  - scipy>=1.7
-  - matplotlib>=3.4
-  - Pillow
-  - jupyter
-  - ipywidgets>=0.6.0
-  - requests
-  - SimPEG>=0.15.0
-  - empymod>=2.0.0
-  - cvxopt
-  - pytest
+  - mamba
+  - notebook
+  - jupyterhub
+  - jupyterlab
+  - bokeh
+  - conda-lock
+  - ghp-import
+  - git
+  - jupytext
+  - jupyter-resource-usage
+  - matplotlib=3.4.3
+  - numpy=1.21
+  - nbgitpuller
+  - pandas
   - pip
+  - pillow
+  - python=3.9
+  - discretize
+  - empymod
+  - ipywidgets
+  - mkl
+  - pymatsolver
+  - qtconsole
+  - qtpy
+  - scipy
+  - scikit-learn
+  - SimPEG
   - pip:
-    - deepdish
-    - geoscilabs>=0.3.0
+    - git+https://github.com/geoscixyz/geosci-labs
     - testipynb
