@@ -1,8 +1,8 @@
 name: geosci-labs
 
 channels:
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
   - mamba
   - notebook
