@@ -61,3 +61,9 @@ target/
 
 *.sublime-project
 *.sublime-workspace
+
+# project specific
+notebooks/mag/github.com/
+notebooks/seismic/obsdata1.npy
+notebooks/seismic/syndata1.npy
+notebooks/seismic/time1.npy
