@@ -21,6 +21,7 @@ dependencies:
   - pip
   - pillow
   - python=3.9
+  - pytest
   - discretize
   - empymod
   - ipywidgets
