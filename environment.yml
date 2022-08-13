@@ -3,22 +3,32 @@ name: geosci-labs
 channels:
   - conda-forge
 dependencies:
-  - cvxopt
-  - deepdish
-  - discretize
-  - empymod=2.0.0
-  - ipywidgets
-  - jupyter
-  - matplotlib<3.5
-  - mkl>=2021.3.0
+  - mamba
+  - notebook
+  - jupyterhub
+  - jupyterlab
+  - bokeh
+  - conda-lock
+  - ghp-import
+  - git
+  - jupytext
+  - jupyter-resource-usage
+  - matplotlib=3.4.3
   - numpy=1.21
-  - Pillow
+  - nbgitpuller
+  - pandas
   - pip
-  - pymatsolver
+  - pillow
   - python=3.9
-  - requests
-  - scipy>=1.7
-  - scikit-learn<1.0
+  - discretize
+  - empymod
+  - ipywidgets
+  - mkl
+  - pymatsolver
+  - qtconsole
+  - qtpy
+  - scipy
+  - scikit-learn
   - SimPEG
   - pip:
     - git+https://github.com/geoscixyz/geosci-labs
