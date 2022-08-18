@@ -31,7 +31,8 @@ dependencies:
   - qtpy
   - scipy
   - scikit-learn
-  - SimPEG
+  - discretize=0.8.0
+  - SimPEG=0.17.0
   - pip:
     - git+https://github.com/geoscixyz/geosci-labs
     - testipynb
