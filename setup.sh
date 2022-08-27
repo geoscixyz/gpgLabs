@@ -8,7 +8,7 @@ source ~/.bashrc
 mamba env create -f environment.yml --prefix ./envs
 
 # activate enviornment
-mamba activate ./envs
+conda activate ./envs
 python -m ipykernel install --user --name=e350
 
 # success
