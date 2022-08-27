@@ -2,7 +2,6 @@
 
 # init mamba
 mamba init
-source ~/.bashrc
 
 # install environment for user
 mamba env create -f environment.yml --prefix ./envs
