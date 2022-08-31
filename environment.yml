@@ -23,7 +23,7 @@ dependencies:
   - discretize
   - empymod
   - ipykernel
-  - ipywidgets=7.7.1
+  - ipywidgets
   - mkl
   - nb_conda_kernels 
   - pymatsolver
