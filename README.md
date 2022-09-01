@@ -18,12 +18,10 @@ The notebooks are available on
 
 ## Launching the notebooks
 
-The notebooks can be run online in the [UBC Open JupyterHub](#ubc-open-jupyterhub), through [Binder](#Binder), or [downloaded and run locally](#Locally).
-
 The notebooks can be run in different ways:
 - online in the [UBC Open JupyterHub](#UBC-Open-JupyterHub),
 - online through [Binder](#Binder), or
-- [downloaded and run them locally](#Locally).
+- [download and run them locally](#Locally).
 
 ### UBC Open JupyterHub 
 
@@ -75,15 +73,15 @@ sh setup.sh
 
 ### Locally
 
-To run them locally, you will need to have python installed, preferably through [anaconda](https://www.anaconda.com/download/).
+To run them locally, you will need to have Python installed, preferably through [Anaconda](https://www.anaconda.com/download/).
 
-You can then clone this reposiroty. From a command line, run
+You can then clone this repository. From a command line, run:
 
 ```
 git clone https://github.com/geoscixyz/gpgLabs.git
 ```
 
-Then `cd` into `gpgLabs`
+Then `cd` into `gpgLabs`:
 
 ```
 cd gpgLabs
@@ -96,7 +94,7 @@ conda env create -f environment.yml
 conda activate geosci-labs
 ```
 
-alternatively, you can install dependencies through pypi
+Alternatively, you can install dependencies through PyPI
 ```
 pip install -r requirements.txt
 ```
@@ -110,7 +108,7 @@ Jupyter will then launch in your web-browser.
 
 ## How to run the cells
 
-Each cell of code can be run with `shift + enter` or you can run the entire notebook by selecting `Cell` and `Run All` in the toolbar.
+Each cell of code can be run with `Shift+Enter` or you can run the entire notebook by selecting `Cell` and `Run All` in the toolbar.
 
 ![cell-run-all](https://em.geosci.xyz/_images/run_all_cells.png)
 
