@@ -1,4 +1,4 @@
-**[overview](#overview) | [launching the notebooks](#launching-the-notebooks) | [running the notebooks](#running-the-notebooks) | [issues](#issues) | [contributing](#for-contributors)**
+**[overview](#overview) | [launching the notebooks](#launching-the-notebooks) | [how to run the cells](#how-to-run-the-cells) | [issues](#issues) | [contributing](#for-contributors)**
 
 # gpgLabs
 
@@ -18,13 +18,18 @@ The notebooks are available on
 
 ## Launching the notebooks
 
-The notebooks can be run online through [Binder](#Binder), or [downloaded and run locally](#Locally).
+The notebooks can be run online in the [UBC Open JupyterHub](#ubc-open-jupyterhub), through [Binder](#Binder), or [downloaded and run locally](#Locally).
+
+The notebooks can be run in different ways:
+- online in the [UBC Open JupyterHub](#UBC-Open-JupyterHub),
+- online through [Binder](#Binder), or
+- [downloaded and run them locally](#Locally).
 
 ### UBC Open JupyterHub 
 
 These instructions are for running the notebooks on the UBC open JupyterHub: https://open.jupyter.ubc.ca
 
-1. Login to the JupyterHub using your cwl
+1. Login to the JupyterHub using your CWL
 
 2. Under "Other" open a terminal 
 
@@ -103,9 +108,9 @@ jupyter notebook
 
 Jupyter will then launch in your web-browser.
 
-## Running the notebooks
+## How to run the cells
 
-Each cell of code can be run with `shift + enter` or you can run the entire notebook by selecting `cell`, `Run All` in the toolbar.
+Each cell of code can be run with `shift + enter` or you can run the entire notebook by selecting `Cell` and `Run All` in the toolbar.
 
 ![cell-run-all](https://em.geosci.xyz/_images/run_all_cells.png)
 
