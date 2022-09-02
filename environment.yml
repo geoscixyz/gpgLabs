@@ -23,9 +23,9 @@ dependencies:
   - discretize
   - empymod
   - ipykernel
-  - ipywidgetss=7.7.1
+  - ipywidgets=7.7.1
   - mkl
-  - nb_conda_kernels 
+  - nb_conda_kernels
   - pymatsolver
   - qtconsole
   - qtpy
@@ -34,4 +34,4 @@ dependencies:
   - discretize=0.8.0
   - SimPEG=0.17.0
   - pip:
-    - git+https://github.com/geoscixyz/geosci-labs
+      - git+https://github.com/geoscixyz/geosci-labs
