@@ -1,0 +1,1 @@
+c = get_config()
