@@ -25,6 +25,8 @@ want to build for
 $ conda-lock --mamba -k explicit --file environment.yml -p linux-64
 ```
 
+## Rebuilding the image
+
 The rest of the build is handled by docker. You can either build it manually or
 use the `Makefile` provided in the root of the repository. The makefile will tag
 the images with your git commit hash ready for Dockerhub etc.
