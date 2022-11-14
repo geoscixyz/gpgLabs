@@ -1,0 +1,6 @@
+name: e350-build
+channels:
+  - conda-forge
+dependencies:
+  - mamba
+  - conda-lock
