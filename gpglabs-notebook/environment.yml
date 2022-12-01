@@ -1,0 +1,34 @@
+name: e350
+channels:
+  - conda-forge
+dependencies:
+  - mamba
+  - notebook
+  - jupyterhub
+  - jupyterlab
+  - bokeh
+  - conda-lock
+  - ghp-import
+  - git
+  - jupytext
+  - jupyter-resource-usage
+  - matplotlib
+  - numpy
+  - nbgitpuller
+  - pandas
+  - pip
+  - pillow
+  - discretize
+  - empymod
+  - ipykernel
+  - ipywidgets
+  - mkl
+  - nb_conda_kernels 
+  - pymatsolver
+  - qtconsole
+  - qtpy
+  - scipy
+  - scikit-learn
+  - traitlets
+  - discretize
+  - SimPEG
