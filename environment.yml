@@ -1,4 +1,4 @@
-name: e350
+name: geosci-labs
 
 channels:
   - conda-forge
