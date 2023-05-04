@@ -1,5 +1,4 @@
 name: e350
-
 channels:
   - conda-forge
 dependencies:
@@ -13,17 +12,16 @@ dependencies:
   - git
   - jupytext
   - jupyter-resource-usage
-  - matplotlib=3.4.3
-  - numpy=1.21
+  - matplotlib
+  - numpy
   - nbgitpuller
   - pandas
   - pip
   - pillow
-  - python=3.9
   - discretize
   - empymod
   - ipykernel
-  - ipywidgets=7.7.1
+  - ipywidgets
   - mkl
   - nb_conda_kernels 
   - pymatsolver
@@ -31,7 +29,6 @@ dependencies:
   - qtpy
   - scipy
   - scikit-learn
-  - discretize=0.8.0
-  - SimPEG=0.17.0
-  - pip:
-    - git+https://github.com/geoscixyz/geosci-labs
+  - traitlets
+  - discretize
+  - SimPEG
