@@ -27,7 +27,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         auto-update-conda: true
-        activate-environment: geoana-test
+        activate-environment: geosci-labs
         channels: conda-forge
         python-version: ${{ matrix.python-version }}
     - name: Install Env
@@ -42,5 +42,4 @@ jobs:
     - name: Run Tests
       shell: bash
       run: |
-        conda activate geosci-labs
-        pytest ${{ matrix.test_file }}
+        pytest -v ${{ matrix.test_file }}
