@@ -29,13 +29,12 @@ jobs:
         auto-update-conda: true
         activate-environment: geosci-labs
         channels: conda-forge
+        environment-file: environment.yml
         python-version: ${{ matrix.python-version }}
     - name: Install Env
       run: |
         conda info
         conda config --show
-        conda env create -f environment.yml
-        conda activate geosci-labs
         conda install pytest
         pip install testipynb
         conda list
