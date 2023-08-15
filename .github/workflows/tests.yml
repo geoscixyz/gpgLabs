@@ -35,10 +35,9 @@ jobs:
       run: |
         conda info
         conda config --show
-        conda install pytest
+        conda install -y pytest
         pip install testipynb
         conda list
     - name: Run Tests
-      shell: bash
       run: |
         pytest -v ${{ matrix.test_file }}
