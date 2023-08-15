@@ -1,37 +1,23 @@
-name: e350
+name: geosci-labs
 
 channels:
   - conda-forge
 dependencies:
-  - mamba
-  - notebook
-  - jupyterhub
-  - jupyterlab
-  - bokeh
-  - conda-lock
-  - ghp-import
-  - git
-  - jupytext
-  - jupyter-resource-usage
-  - matplotlib=3.4.3
-  - numpy=1.21
-  - nbgitpuller
-  - pandas
-  - pip
-  - pillow
-  - python=3.9
+  - cvxopt
+  - deepdish
   - discretize
-  - empymod
-  - ipykernel
-  - ipywidgets=7.7.1
-  - mkl
-  - nb_conda_kernels 
+  - empymod=2.0.0
+  - ipywidgets>=0.6.0
+  - jupyter
+  - matplotlib<3.5
+  - mkl>=2021.3.0
+  - numpy
+  - Pillow
+  - pip
   - pymatsolver
-  - qtconsole
-  - qtpy
+  - python=3.10
+  - requests
   - scipy
-  - scikit-learn
-  - discretize=0.8.0
-  - SimPEG=0.17.0
+  - SimPEG
   - pip:
     - git+https://github.com/geoscixyz/geosci-labs

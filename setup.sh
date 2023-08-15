@@ -9,7 +9,7 @@ mamba env create -f environment.yml --prefix ./envs
 
 # activate enviornment
 mamba activate ./envs
-python -m ipykernel install --user --name=e350
+python -m ipykernel install --user --name=geosci
 
 # success
 echo "Success!"
