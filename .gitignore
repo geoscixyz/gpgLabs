@@ -1,3 +1,6 @@
+# envs folder, where conda packages will be installed
+envs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
