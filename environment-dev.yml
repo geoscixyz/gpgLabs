@@ -14,13 +14,13 @@ dependencies:
   - git
   - jupytext
   - jupyter-resource-usage
-  - matplotlib=3.4.3
-  - numpy=1.21
+  - matplotlib<3.5
+  - numpy
   - nbgitpuller
   - pandas
   - pip
   - pillow
-  - python=3.9
+  - python=3.10
   - pytest
   - discretize
   - empymod
@@ -31,8 +31,8 @@ dependencies:
   - qtpy
   - scipy
   - scikit-learn
-  - discretize=0.8.0
-  - SimPEG=0.17.0
+  - discretize
+  - simpeg
   - pip:
     - git+https://github.com/geoscixyz/geosci-labs
     - testipynb
