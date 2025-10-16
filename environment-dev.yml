@@ -32,7 +32,7 @@ dependencies:
   - scipy
   - scikit-learn
   - discretize
-  - simpeg=0.23
+  - simpeg<0.24
   - pip:
     - git+https://github.com/geoscixyz/geosci-labs
     - testipynb
