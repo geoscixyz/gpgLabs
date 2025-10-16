@@ -1,4 +1,4 @@
-name: gpg-labs
+name: geosci-labs
 
 channels:
   - conda-forge
@@ -9,16 +9,11 @@ dependencies:
   - ipywidgets
   - jupyter
   - matplotlib<3.5
-  - mkl=2022.2.1
-  - nbgitpuller=1.2.0
-  - numpy=1.24.4
-  - pillow=10.0.0
-  - pip=23.2
-  - pymatsolver=0.2.0
+  - pillow
+  - pip
+  - pymatsolver
   - python=3.10
-  - requests=2.31.0
-  - scipy=1.11.1
-  - setuptools=68.0
-  - simpeg=
+  - requests
+  - simpeg
   - pip:
     - git+https://github.com/geoscixyz/geosci-labs
