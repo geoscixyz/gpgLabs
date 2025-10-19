@@ -14,7 +14,7 @@ dependencies:
   - git
   - jupytext
   - jupyter-resource-usage
-  - matplotlib<3.5
+  - matplotlib<3.4
   - numpy
   - nbgitpuller
   - pandas
