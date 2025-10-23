@@ -9,7 +9,7 @@ dependencies:
   - empymod
   - ipywidgets
   - jupyter
-  - matplotlib<3.5
+  - matplotlib
   - Pillow
   - pip
   - pymatsolver
