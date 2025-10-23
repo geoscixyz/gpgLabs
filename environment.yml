@@ -2,18 +2,22 @@ name: geosci-labs
 
 channels:
   - conda-forge
+channel_priority: strict
 dependencies:
-  - cvxopt
-  - deepdish
-  - discretize
-  - ipywidgets
-  - jupyter
-  - matplotlib
-  - Pillow
-  - pip
-  - pymatsolver
   - python=3.10
+  - numpy
+  - scipy
+  - libblas=*=*openblas        # avoid MKL bloat
+  - matplotlib-base>=3.8       # no Qt
+  - ipywidgets
+  - jupyterlab
+  - pillow
   - requests
+  - discretize
   - simpeg
+  - pymatsolver
+  - deepdish
+  - cvxopt
+  - pip
   - pip:
     - git+https://github.com/geoscixyz/geosci-labs
