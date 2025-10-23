@@ -7,7 +7,7 @@ dependencies:
   - deepdish
   - discretize
   - empymod
-  - ipywidgets>=0.6.0
+  - ipywidgets
   - jupyter
   - matplotlib<3.5
   - Pillow
