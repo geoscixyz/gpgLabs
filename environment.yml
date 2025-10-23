@@ -7,8 +7,8 @@ dependencies:
   - python=3.10
   - numpy
   - scipy
-  - libblas=*=*openblas        # avoid MKL bloat
-  - matplotlib-base>=3.8       # no Qt
+  - pydiso
+  - matplotlib<3.5       # no Qt
   - ipywidgets
   - jupyterlab
   - pillow
