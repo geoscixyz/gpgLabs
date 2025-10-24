@@ -4,11 +4,11 @@ channels:
   - conda-forge
 channel_priority: strict
 dependencies:
-  - python=3.10
+  - python=3.11
   - numpy
   - scipy
   - pydiso
-  - matplotlib<3.5       # no Qt
+  - matplotlib
   - ipywidgets
   - jupyterlab
   - pillow
