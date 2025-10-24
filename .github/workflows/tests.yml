@@ -2,11 +2,10 @@ name: Testing
 
 on:
   push:
-    branches:
-      - '*'
+    branches: ['*']
   pull_request:
-    branches:
-      - '*'
+    branches: ['*']
+
 jobs:
   setup-build:
     name: Ex1 (${{ matrix.python-version }}, ${{ matrix.os }})
@@ -18,26 +17,53 @@ jobs:
       fail-fast: false
       matrix:
         os: ["ubuntu-latest"]
-        python-version: ["3.10"]
-        test_file: ["tests/test_dcip.py", "tests/test_em.py", "tests/test_gpr.py", "tests/test_mag.py", "tests/test_seismic.py"]
+        python-version: ["3.11"]
+        test_file: [
+          "tests/test_dcip.py",
+          "tests/test_em.py",
+          "tests/test_gpr.py tests/test_seismic.py",
+          "tests/test_mag.py"
+        ]
+    env:
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+      MPLBACKEND: Agg        # avoid GUI backends import cost
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup Conda
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        auto-update-conda: true
-        activate-environment: geosci-labs
-        channels: conda-forge
-        environment-file: environment.yml
-        python-version: ${{ matrix.python-version }}
-    - name: Install Env
-      run: |
-        conda info
-        conda config --show
-        conda install -y pytest
-        pip install testipynb
-        conda list
-    - name: Run Tests
-      run: |
-        pytest -v ${{ matrix.test_file }}
+      - uses: actions/checkout@v4
+
+      # Use Miniforge3 (not "latest" to avoid 404s) + mamba, strict conda-forge
+      - name: Setup Conda (Miniforge3 + mamba)
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-variant: Miniforge3
+          miniforge-version: "24.11.0-0"     # pin to avoid 'latest' asset 404s
+          python-version: ${{ matrix.python-version }}
+          activate-environment: geosci-labs
+          environment-file: environment.yml
+          use-mamba: true
+          auto-update-conda: false
+          auto-activate-base: false
+          channels: conda-forge
+          channel-priority: strict
+          condarc: |
+            channels:
+              - conda-forge
+            channel_priority: strict
+
+      - name: Show environment info
+        run: |
+          conda info
+          conda list
+
+      - name: Install test dependencies (pytest + testipynb)
+        run: |
+          n=0
+          until [ $n -ge 3 ]; do
+            mamba install -y pytest && pip install -U testipynb && break
+            n=$((n+1))
+            echo "Retry $n/3 after transient fetch error..."
+            sleep 10
+          done
+
+      - name: Run tests
+        run: pytest -v ${{ matrix.test_file }}
