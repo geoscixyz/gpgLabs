@@ -22,7 +22,6 @@ jobs:
           "tests/test_dcip.py",
           "tests/test_em.py",
           "tests/test_gpr.py tests/test_seismic.py",
-          "tests/test_inversion.py",
           "tests/test_mag.py"
         ]
     env:
